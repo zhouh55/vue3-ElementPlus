@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/faker": "^5.1.5",
     "@types/lodash": "^4.14.168",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.2",
     "echarts": "^5.0.0",
