@@ -1,5 +1,6 @@
 # project
 
+# 未集成 Jest，主要采用 master 分支
 ## Project setup
 ```
 npm install
