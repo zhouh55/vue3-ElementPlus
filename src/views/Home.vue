@@ -3,6 +3,7 @@
     <div>
       {{ messageTest }}
       <hello-world />
+      <button @click="clickMe">点我</button>
     </div>
   </div>
 </template>
@@ -14,12 +15,24 @@ export default defineComponent({
   components: {
     HelloWorld
   },
+  // emits: [ 'addBook' ],
+  // emits 校验 emit 提交事件的
+  // emits: {
+  //   addBook: (polyary: Array<string>) => {
+  //     console.log(polyary);
+
+  //     return true;
+  //   } // 必须箭头函数
+  // },
 
   setup(props, ctx) {
-    console.log(ctx);
-
+    const clickMe = () => {
+      // ctx.emit('addBook', ['11']);
+      // ctx.emit('non-declared-event');
+    };
     return {
-      messageTest: 111
+      messageTest: 111,
+      clickMe
     };
   }
 });

@@ -1,3 +1,11 @@
 module.exports = {
-  lintOnSave: false
+  lintOnSave: false,
+  productionSourceMap: false,
+  devServer: {
+    open: true,
+    historyApiFallback: true
+    // proxy: {
+
+    // }
+  }
 };
