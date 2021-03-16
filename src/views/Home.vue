@@ -11,6 +11,9 @@
 <script lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import { defineComponent } from 'vue';
+const _ = require('lodash') as typeof import('lodash');
+console.log(_.prototype);
+
 export default defineComponent({
   components: {
     HelloWorld
@@ -26,6 +29,8 @@ export default defineComponent({
   // },
 
   setup(props, ctx) {
+    console.log(props, ctx);
+
     const clickMe = () => {
       // ctx.emit('addBook', ['11']);
       // ctx.emit('non-declared-event');
