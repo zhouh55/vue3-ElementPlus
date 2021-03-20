@@ -29,7 +29,7 @@ export default defineComponent({
   // },
 
   setup(props, ctx) {
-    console.log(props, ctx);
+    console.log(ctx);
 
     const clickMe = () => {
       // ctx.emit('addBook', ['11']);
