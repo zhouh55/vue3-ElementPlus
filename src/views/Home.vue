@@ -11,8 +11,14 @@
 <script lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import { defineComponent } from 'vue';
-const _ = require('lodash') as typeof import('lodash');
+import _ from 'lodash';
 console.log(_.prototype);
+import * as element from 'element-plus';
+console.log(element);
+
+import * as highlight from 'highlight.js';
+import * as ol from 'ol';
+console.log(highlight, ol);
 
 export default defineComponent({
   components: {

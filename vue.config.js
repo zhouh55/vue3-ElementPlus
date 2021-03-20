@@ -1,6 +1,7 @@
 module.exports = {
   lintOnSave: false,
   productionSourceMap: false,
+
   css: {
     loaderOptions: {
       postcss: {
@@ -23,7 +24,50 @@ module.exports = {
       .rule('worker-loader')
       .test(/\.worker\.js$/)
       .use('worker-loader')
-      .loader('worker-loader');
+      .loader('worker-loader')
+      .end();
+
+    config.optimization.splitChunks({
+      chunks: 'all',
+      cacheGroups: {
+        vendors: {
+          name: 'chunk-vendors',
+          test: /[\\/]node_modules[\\/]/,
+          enforce: true // TODO 啥玩意啊
+        },
+
+        elementPlus: {
+          name: 'chunk-element-plus',
+          test: /[\\/]node_modules[\\/]_?element-plus(.*)/,
+          priority: 4, // 权重 优先级
+          reuseExistingChunk: true
+        },
+
+        lodash: {
+          name: 'chunk-lodash',
+          test: /[\\/]node_modules[\\/]_?lodash(.*)/,
+          priority: 3, // 权重 优先级
+          reuseExistingChunk: true,
+          enforce: true
+        },
+
+        highlight: {
+          name: 'chunk-highlight',
+          test: /[\\/]node_modules[\\/]_?highlight(.*)/,
+          priority: 2, // 权重 优先级
+          reuseExistingChunk: true,
+          enforce: true
+        },
+
+        ol: {
+          name: 'chunk-ol',
+          test: /[\\/]node_modules[\\/]_?ol(.*)/,
+          priority: 1, // 权重 优先级
+          reuseExistingChunk: true,
+          enforce: true
+        }
+      }
+    });
   },
 
   devServer: {
